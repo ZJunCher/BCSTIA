@@ -226,7 +226,7 @@ for train_and_val_indices, test_indices in KF.split(dataset):
         else:
             patience += 1
 
-        if patience > patiences or eval_acc_epoch == 1.0 :
+        if patience > patiences:
             break
 
         eval_losses.append(eval_loss / len(datasets_test))
