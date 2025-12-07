@@ -6,8 +6,6 @@ from scipy.io import loadmat
 from torch.utils.data import random_split
 from sklearn.preprocessing import StandardScaler
 
-ImageFile.LOAD_TRUNCATED_IMAGES = True
-
 def log_zscore_normalize(data):
     data = np.sign(data) * np.log1p(np.abs(data))
     mean = np.mean(data, axis=(1, 2), keepdims=True)
