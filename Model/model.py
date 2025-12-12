@@ -117,8 +117,8 @@ class cheb_conv(nn.Module):
             for kk in range(self.k):
                 # shape of T_k is (V, V)
                 T_k = cheb_polynomials[:, kk, :, :] #torch.size([20,90,90])
-                A_mask = (T_k >= 0.5).float()  # 大于等于阈值的保留
-                T_k = T_k * A_mask  # 小于阈值的置 0
+                A_mask = (T_k >= 0.5).float()
+                T_k = T_k * A_mask
                 # shape of theta_k is (F, num_of_filters)
                 theta_k = self.Theta[kk] #torch.size([20,195,45])
 
