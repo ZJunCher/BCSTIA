@@ -27,9 +27,9 @@ def scaled_Laplacian(W):
 
     L = D - W
 
-    eigenvalues = torch.linalg.eig(L)[0] #torch.size([90,]) # 获取特征值
+    eigenvalues = torch.linalg.eig(L)[0] #torch.size([90,])
     magnitude = torch.abs(eigenvalues)
-    lambda_max = torch.max(magnitude).item()  # 获取最大特征值
+    lambda_max = torch.max(magnitude).item()
     # lambda_max = eigs(L, k=1, which='LR')[0].real
 
     return (2 * L) / lambda_max - torch.eye(W.shape[0]).to(L.device)
